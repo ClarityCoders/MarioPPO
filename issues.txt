@@ -1,0 +1,13 @@
+1. ModuleNotFoundError: No module named 'gym.envs.classic_control.rendering'
+pip install gym==0.21.0
+pip install gym-retro
+
+2. Download import rom
+python -m retro.import "C:\Users\user\Downloads\Mega Man 2 (USA)"
+
+3. Play game.
+python3 -m retro.examples.interactive --game MegaMan2-Nes
+(Arrow keys and z / x)
+
+4. StableBaselines
+pip install stable-baselines3[extra]
