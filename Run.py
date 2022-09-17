@@ -2,6 +2,7 @@ import retro
 import gym
 from RandomAgent import TimeLimitWrapper
 from stable_baselines3 import PPO
+from stable_baselines3.common.atari_wrappers import MaxAndSkipEnv
 
 
 model = PPO.load("tmp/best_model.zip")
@@ -11,7 +12,8 @@ def main():
     #env = retro.make(game='MegaMan2-Nes')
     env = retro.make(game='SuperMarioBros-Nes')
     env = TimeLimitWrapper(env)
-    
+    env = MaxAndSkipEnv(env, 4)
+
     obs = env.reset()
     done = False
 
